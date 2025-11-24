@@ -1,0 +1,13 @@
+{
+  "name": "@mtkruto/auth-string",
+  "version": "0.0.0",
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "exports": {
+    ".": "./main.ts"
+  },
+  "imports": {
+    "@mtkruto/mtkruto": "jsr:@mtkruto/mtkruto@^0.75.1"
+  }
+}
