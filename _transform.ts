@@ -24,15 +24,11 @@ await build({
     lib: ["ESNext", "DOM", "ESNext.AsyncIterable"],
   },
   shims: {
-    custom: [
-      {
-        package: {
-          name: "@mtkruto/node",
-          version: mtkrutoVersion,
-        },
-        globalNames: ["Client"],
-      },
-    ],
+    prompts: true,
+    deno: true,
+  },
+  mappings: {
+    "./client.ts": "./client.node.ts",
   },
   packageManager: "pnpm",
   package: {
@@ -42,6 +38,9 @@ await build({
     repository: {
       type: "git",
       url: "git+https://github.com/MTKruto/create-auth-string.git",
+    },
+    dependencies: {
+      "@mtkruto/node": mtkrutoVersion,
     },
   },
   postBuild() {

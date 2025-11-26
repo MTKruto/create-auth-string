@@ -1,4 +1,4 @@
-import { Client } from "@mtkruto/mtkruto";
+import { Client } from "./client.ts";
 import { findApiCredentials } from "./find_api_credentials.ts";
 import { isApiHashValid } from "./is_api_hash_valid.ts";
 

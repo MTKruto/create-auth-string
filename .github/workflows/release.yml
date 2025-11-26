@@ -39,8 +39,8 @@ jobs:
 
       - name: Transform and Publish
         run: |
-          deno task trasnform
-          cd dist
+          deno task transform
+          cd dist/
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
