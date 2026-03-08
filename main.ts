@@ -54,7 +54,11 @@ try {
   await client.connect();
   console.log("Connected to Telegram.");
 } catch (err) {
-  console.log("Failed to connect to Telegram:", err);
+  console.log(
+    "Failed to connect to Telegram:",
+    err instanceof Error ? err.message : err,
+  );
+  Deno.exit(1);
 }
 
 try {
@@ -62,6 +66,7 @@ try {
 } catch (err) {
   console.log();
   console.log("Failed to sign in:", err);
+  Deno.exit(1);
 }
 
 const authString = await client.exportAuthString();
